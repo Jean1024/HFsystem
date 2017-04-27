@@ -11,7 +11,7 @@
 <!-- 头部 -->
   <div class="header">
     <h4 class="fl">创新网络数据管理系统</h4>
-    <ul>
+    <ul id="tabButtons">
       <li>国内数据</li>
       <li>国外数据</li>
       <li>站点数据</li>
@@ -19,14 +19,57 @@
   </div>
 <!-- 数据主体 -->
   <div class="main">
-    <div class="addpoint">
-      <span class="add"></span>
-      <span class="title">添加站点</span>
-    </div>
+    <ul id="showData">
+      <li class="first" style="display:block;">
+        <!-- 添加数据 -->
+        <div class="addpoint">
+          <span class="add"></span>
+          <span class="title">添加站点</span>
+        </div>
+        <!-- 数据主体 -->
+        <div class="mainData">
+          <table id="mainData" >
+            <thead id="mainHead"></thead>
+            <tbody id="mainBody">
+           </tbody>
+          </table>
+        </div>
+      </li>
+      <li class="second" style="display:none;">
+        <!-- 添加数据 -->
+        <div class="addpoint">
+          <span class="add"></span>
+          <span class="title">添加站点</span>
+        </div>
+        <!-- 数据主体 -->
+        <div class="mainData">
+          <table id="secondData" >
+            <thead id="secondHead"></thead>
+            <tbody id="secondBody">
+           </tbody>
+          </table>
+        </div>
+      </li>
+      <li class="third" style="display:none;">
+        <!-- 添加数据 -->
+        <div class="addpoint">
+          <span class="add"></span>
+          <span class="title">添加站点</span>
+        </div>
+        <!-- 数据主体 -->
+        <div class="mainData">
+          <table id="thirdData" >
+            <thead id="thirdHead"></thead>
+            <tbody id="thirdBody">
+           </tbody>
+          </table>
+        </div>
+      </li>
+    </ul>
   </div>
 <!-- 底部区域 -->
   <div class="footer">
-    <div class="left fl">
+    <div class="left">
         <i></i>
         <span>打印本页面</span>
         <b></b>
@@ -35,4 +78,11 @@
   </div>
 </body>
 <script src="js/jquery-1.8.2.js"></script>
+<script src="js/index.js"></script>
+<script>
+  let option={
+    url:'http://localhost:3000/hfcxapidata/station/selectstation5'
+  }
+  new CreateForm(option)
+</script>
 </html>

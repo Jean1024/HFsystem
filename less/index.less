@@ -15,6 +15,10 @@ html,body{
   ul{
     margin-left: 6.041667rem;
     float: left;
+    li:nth-of-type(1){
+      color:#282828;
+      background: white;
+    }
     li{
       float: left;
       width: 1.270833rem;
@@ -28,44 +32,107 @@ html,body{
       font-weight: 700;
       cursor:pointer;
     }
-    li:hover{
-      color: #282828;
-      background: white;
-    }
   }
 }
 .main{
   padding: 0.479167rem 0 0 0.4375rem ;
-  .addpoint{
-    width: 1.125rem;
-    height: 0.333333rem;
-    background: #f3901b;
-    border-radius: 0.041667rem;
-    overflow: hidden;
-    cursor: pointer;
-    span{
-      display: block;
-      float: left;
-      color:white;
-    }
-    .add{
-      width: 0.1875rem;
-      height: 0.1875rem;
-      background: url("../img/addpoint.png") center/cover;
-      margin: 0.0625rem 0.083333rem 0.072917rem 0.125rem;
-    }
-    .title{
-      line-height:0.333333rem;
-      font-size: 0.145833rem;
+  ul{
+    li{
+        .addpoint{
+        width: 1.125rem;
+        height: 0.333333rem;
+        background: #f3901b;
+        border-radius: 0.041667rem;
+        overflow: hidden;
+        cursor: pointer;
+        span{
+          display: block;
+          float: left;
+          color:white;
+        }
+        .add{
+          width: 0.1875rem;
+          height: 0.1875rem;
+          background: url("../img/addpoint.png") center/cover;
+          margin: 0.0625rem 0.083333rem 0.072917rem 0.125rem;
+        }
+        .title{
+          line-height:0.333333rem;
+          font-size: 0.145833rem;
+        }
+      }
+      // 代码主体部分
+      .mainData{
+        margin-top: 0.1875rem;
+        margin-bottom: 0.270833rem;
+        table{
+          width: auto;
+          border-collapse: collapse;
+          thead{
+              text-align: center;
+              border: 1px solid #D2D2D2;
+              background: #f5f8fd;
+            th{
+              padding:0 0.3125rem;
+              height: 0.833333rem;
+              font-weight: 400;
+              input{
+                width: 0.5625rem;
+                height: 0.1875rem;
+                border-radius: 0.041667rem;
+                border: 0 none;
+                background: #becae2;
+                color: white;
+                outline: none;
+                padding-left: 0.208333rem;
+              }
+              ::-webkit-input-placeholder { /* WebKit browsers */
+                color: white;
+              }
+              :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                color: white;
+              }
+              ::-moz-placeholder { /* Mozilla Firefox 19+ */
+                color: white;
+              }
+              :-ms-input-placeholder { /* Internet Explorer 10+ */
+                color: white;
+              }
+            }
+          }
+          tbody{
+            color:#6e6f71;
+            tr:nth-of-type(even){
+              background: #f5f8fd;
+            }
+            tr>td{
+              position:relative;
+            }
+            tr>td>b{
+              display:inline-block;
+              width:0.135417rem;
+              height: 0.072917rem;
+              background: url("../img/down.png") center/cover;
+            }
+            tr>td:hover b{
+              background: url("../img/up.png") center/cover;
+            }
+            tr{
+              border: 1px solid #D2D2D2;
+              height: 0.520833rem;
+              td{
+                text-align:center;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
 .footer{
     padding: 0 0 0.666667rem 0.4375rem;
     box-sizing:border-box;
-    position: absolute;
-    left: 0;
-    bottom: 0;
     width: 100%;
     color:#949494;
     .left{

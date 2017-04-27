@@ -18,6 +18,10 @@ body {
   margin-left: 6.041667rem;
   float: left;
 }
+.header ul li:nth-of-type(1) {
+  color: #282828;
+  background: white;
+}
 .header ul li {
   float: left;
   width: 1.270833rem;
@@ -31,14 +35,10 @@ body {
   font-weight: 700;
   cursor: pointer;
 }
-.header ul li:hover {
-  color: #282828;
-  background: white;
-}
 .main {
   padding: 0.479167rem 0 0 0.4375rem ;
 }
-.main .addpoint {
+.main ul li .addpoint {
   width: 1.125rem;
   height: 0.333333rem;
   background: #f3901b;
@@ -46,27 +46,93 @@ body {
   overflow: hidden;
   cursor: pointer;
 }
-.main .addpoint span {
+.main ul li .addpoint span {
   display: block;
   float: left;
   color: white;
 }
-.main .addpoint .add {
+.main ul li .addpoint .add {
   width: 0.1875rem;
   height: 0.1875rem;
   background: url("../img/addpoint.png") center / cover;
   margin: 0.0625rem 0.083333rem 0.072917rem 0.125rem;
 }
-.main .addpoint .title {
+.main ul li .addpoint .title {
   line-height: 0.333333rem;
   font-size: 0.145833rem;
+}
+.main ul li .mainData {
+  margin-top: 0.1875rem;
+  margin-bottom: 0.270833rem;
+}
+.main ul li .mainData table {
+  width: auto;
+  border-collapse: collapse;
+}
+.main ul li .mainData table thead {
+  text-align: center;
+  border: 1px solid #D2D2D2;
+  background: #f5f8fd;
+}
+.main ul li .mainData table thead th {
+  padding: 0 0.3125rem;
+  height: 0.833333rem;
+  font-weight: 400;
+}
+.main ul li .mainData table thead th input {
+  width: 0.5625rem;
+  height: 0.1875rem;
+  border-radius: 0.041667rem;
+  border: 0 none;
+  background: #becae2;
+  color: white;
+  outline: none;
+  padding-left: 0.208333rem;
+}
+.main ul li .mainData table thead th ::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: white;
+}
+.main ul li .mainData table thead th :-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: white;
+}
+.main ul li .mainData table thead th ::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: white;
+}
+.main ul li .mainData table thead th :-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: white;
+}
+.main ul li .mainData table tbody {
+  color: #6e6f71;
+}
+.main ul li .mainData table tbody tr:nth-of-type(even) {
+  background: #f5f8fd;
+}
+.main ul li .mainData table tbody tr > td {
+  position: relative;
+}
+.main ul li .mainData table tbody tr > td > b {
+  display: inline-block;
+  width: 0.135417rem;
+  height: 0.072917rem;
+  background: url("../img/down.png") center / cover;
+}
+.main ul li .mainData table tbody tr > td:hover b {
+  background: url("../img/up.png") center / cover;
+}
+.main ul li .mainData table tbody tr {
+  border: 1px solid #D2D2D2;
+  height: 0.520833rem;
+}
+.main ul li .mainData table tbody tr td {
+  text-align: center;
 }
 .footer {
   padding: 0 0 0.666667rem 0.4375rem;
   box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  bottom: 0;
   width: 100%;
   color: #949494;
 }
