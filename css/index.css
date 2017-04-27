@@ -1,0 +1,95 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+.header {
+  height: 0.791667rem;
+  background: #282828;
+  color: white;
+}
+.header h4 {
+  font-weight: 400;
+  line-height: 0.791667rem;
+  margin-left: 0.375rem;
+  font-size: 0.1875rem;
+}
+.header ul {
+  margin-left: 6.041667rem;
+  float: left;
+}
+.header ul li {
+  float: left;
+  width: 1.270833rem;
+  height: 0.791667rem;
+  color: #bdbdbd;
+  box-sizing: border-box;
+  line-height: 0.791667rem;
+  text-align: center;
+  border-top-left-radius: 0.0625rem;
+  border-top-right-radius: 0.0625rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.header ul li:hover {
+  color: #282828;
+  background: white;
+}
+.main {
+  padding: 0.479167rem 0 0 0.4375rem ;
+}
+.main .addpoint {
+  width: 1.125rem;
+  height: 0.333333rem;
+  background: #f3901b;
+  border-radius: 0.041667rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+.main .addpoint span {
+  display: block;
+  float: left;
+  color: white;
+}
+.main .addpoint .add {
+  width: 0.1875rem;
+  height: 0.1875rem;
+  background: url("../img/addpoint.png") center / cover;
+  margin: 0.0625rem 0.083333rem 0.072917rem 0.125rem;
+}
+.main .addpoint .title {
+  line-height: 0.333333rem;
+  font-size: 0.145833rem;
+}
+.footer {
+  padding: 0 0 0.666667rem 0.4375rem;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #949494;
+}
+.footer .left {
+  cursor: pointer;
+}
+.footer .left i {
+  display: block;
+  float: left;
+  width: 0.229167rem;
+  height: 0.197917rem;
+  background: url("../img/print.png") center / cover;
+}
+.footer .left span {
+  float: left;
+  margin-left: 0.166667rem;
+}
+.footer .left b {
+  display: block;
+  float: left;
+  width: 0.166667rem;
+  height: 0.104167rem;
+  margin-top: 0.0625rem;
+  margin-left: 0.125rem;
+  background: url("../img/down.gif") center / cover;
+}
