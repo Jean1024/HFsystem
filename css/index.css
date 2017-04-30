@@ -159,3 +159,6 @@ body {
   margin-left: 0.125rem;
   background: url("../img/down.gif") center / cover;
 }
+.ui-select-pagesize {
+  display: none!important;
+}
