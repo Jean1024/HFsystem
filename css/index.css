@@ -144,6 +144,8 @@ body {
 }
 .footer .left {
   cursor: pointer;
+  height: 0.3rem;
+  width: 1.8rem;
 }
 .footer .left i {
   display: block;
