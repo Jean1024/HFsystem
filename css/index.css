@@ -1,7 +1,7 @@
 html,
 body {
   position: relative;
-  height: 100%;
+  width: 100%;
 }
 .header {
   height: 0.791667rem;
@@ -38,6 +38,11 @@ body {
 .main {
   padding: 0.479167rem 0 0 0.4375rem ;
 }
+.main ul li {
+  position: relative;
+  overflow: hidden;
+  height: 8rem;
+}
 .main ul li .addpoint {
   width: 1.125rem;
   height: 0.333333rem;
@@ -68,6 +73,7 @@ body {
 .main ul li .mainData table {
   width: auto;
   border-collapse: collapse;
+  margin-top: 0.5rem;
 }
 .main ul li .mainData table thead {
   text-align: center;

@@ -27,9 +27,9 @@ CreateForm.prototype={
     this.data = this.getData(url+'?page=1&pagenum=12');
   },
   bindEvents:function (url) {
-    // 第一页数据
-    this.creatThead(this.data.namelist,"#mainHead");
-    this.creatTbody(this.data.datalist,"#mainBody");
+    // 第一页数据根据页码将数据渲染到页面上
+    this.creatThead(this.data,"#mainHead");
+    this.creatTbody(this.data,"#mainBody");
     this.searchEvents();
     this.initPageCount(url);
   },
@@ -40,6 +40,7 @@ CreateForm.prototype={
       return
     }
     this.len=this.allData.datalist.length;
+    log(this.len)
     $('#pageToolbar').Paging({pagesize:12,count:this.len,toolbar:true});
     
     $(".ui-paging-container").on('click',$('.ui-pager'),function () {
@@ -54,7 +55,7 @@ CreateForm.prototype={
       }
     })
   },
-  // 根据页码将数据渲染到页面上  页码
+  //   页码
   renderPageNum:function (url) {
       this.getCurrentPageNum();
       this.data=this.getData((url+'?page='+this.pageIndex+'&pagenum=12').replace(/\?/g,"&").replace(/\&/,"?"));
@@ -89,8 +90,8 @@ CreateForm.prototype={
       $(dom).html("")
     }
     var theadString=""
-    for (var i = 0; i < data.length; i++) {
-      theadString += `<th>${data[i]}<br><input type="text" id="seach${i}"  placeholder="搜索"/></th>`
+    for (var i = 0; i < data.namelist.length; i++) {
+      theadString += `<th>${data.namelist[i]}<br><input type="text" id="seach${i}"  placeholder="搜索"/></th>`
     }
     $(theadString).appendTo($(dom))
   },
@@ -100,20 +101,13 @@ CreateForm.prototype={
       $(dom).html("")
     }
     var tbodyString=""
-    for (var i = 0; i < data.length; i++) {
-      var item=data[i];
-      tbodyString += 
-      ` <tr>
-            <td>${item.station_id_d} <b></b></td>
-            <td>${item.station_id_c}</td>
-            <td>${item.station_name}</td>
-            <td>${item.country}</td>
-            <td>${item.province}</td>
-            <td>${item.city}</td>
-            <td>${item.town}</td>
-            <td>${item.cnty}</td>
-            <td>${item.station_levl}</td>
-        </tr>`
+    for (var i = 0; i < data.datalist.length; i++) {
+      var item=data.datalist[i];
+      tbodyString += `<tr>`
+      for (var j = 0; j < data.codelist.length; j++) {
+        tbodyString += `<td>${item[data.codelist[j]] || ""}</td>`
+      }
+      tbodyString += `</tr>`
     }
     $(tbodyString).appendTo($(dom))
   },
@@ -144,15 +138,23 @@ CreateForm.prototype={
           log(_this.allData)
           log(_this.url)
           _this.data=_this.getData(_this.url+'&page='+_this.pageIndex+'&pagenum=12');
-          _this.creatThead(_this.data.namelist,"#mainHead");
-          _this.creatTbody(_this.data.datalist,"#mainBody");
+          _this.creatThead(_this.data,"#mainHead");
+          _this.creatTbody(_this.data,"#mainBody");
           _this.initPageCount(_this.url)
           // 清空输入框
            $(this).val("")
            _this.searchEvents()
+           _this.allowFormsInIscroll()
         }
       })
     }
+  },
+  allowFormsInIscroll:function (){
+    [].slice.call(document.querySelectorAll('input, select, button')).forEach(function(el){
+      el.addEventListener(('ontouchstart' in window)?'touchstart':'mousedown', function(e){
+        e.stopPropagation();
+      })
+    })
   }
 }
 
